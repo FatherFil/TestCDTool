@@ -1,4 +1,4 @@
 # A sample Gemfile
 source "https://rubygems.org"
 
-gem 'minitest', '~> 5.8.x'
+gem 'minitest', '~> 5.3.2'
