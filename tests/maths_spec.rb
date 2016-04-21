@@ -1,9 +1,15 @@
+require 'minitest/autorun'
 require_relative '../maths'
 
-RSpec.describe 'TestPowerUp' do
-  it 'should Multiply two numbers together' do
-    maths = Maths.new
-    total = maths.PowerUp(3,3)
-    expect(total).to eq 9
+class TestMaths < Minitest::Test
+
+  def setup
+    @maths = Maths.new
   end
+
+  def test_answer_is_9_when_supplied_with_3_and_3
+    total = @maths.PowerUp(3,3)
+    assert_equal(9,total)
+  end
+
 end
