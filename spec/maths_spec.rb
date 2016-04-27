@@ -30,7 +30,7 @@ RSpec.describe Maths do
   context "when supplied with A and 5" do
     it "should return AAAAA" do
       total = @maths.PowerUp('A',5)
-      expect(total).to eq('AAAAAA')
+      expect(total).to eq('AAAAA')
     end
   end
 
