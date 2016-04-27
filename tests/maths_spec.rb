@@ -1,30 +1,37 @@
-require 'minitest/autorun'
 require_relative '../maths'
 
-class TestMaths < Minitest::Test
+RSpec.describe Maths do
 
-  def setup
+  before do
     @maths = Maths.new
   end
 
-  def answer_is_9_when_supplied_with_3_and_3
-    total = @maths.PowerUp(3,3)
-    assert_equal(8,total)
+  context "when supplied with 3 and 3" do
+    it "should return 9" do
+      total = @maths.PowerUp(3,3)
+      expect(total).to eq(9)
+    end
   end
 
-  def answer_is_0_when_supplied_with_0_and_0
-    total = @maths.PowerUp(0,0)
-    assert_equal(0,total)
+  context "when supplied with 0 and 0" do
+    it "should return 0" do
+      total = @maths.PowerUp(0,0)
+      expect(total).to eq(0)
+    end
   end
 
-  def answer_is_neg20_when_supplied_with_neg2_and_10
-    total = @maths.PowerUp(-2,10)
-    assert_equal(-20,total)
+  context "when supplied with -2 and 10" do
+    it "should return -20" do
+      total = @maths.PowerUp(-2,10)
+      expect(total).to eq(-20)
+    end
   end
 
-  def answer_is_AAAAA_when_supplied_with_A_and_5
-    total = @maths.PowerUp('A',5)
-    assert_equal('AAAAA',total)
+  context "when supplied with A and 5" do
+    it "should return AAAAA" do
+      total = @maths.PowerUp('A',5)
+      expect(total).to eq('AAAAAA')
+    end
   end
 
 end
